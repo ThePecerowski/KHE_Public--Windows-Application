@@ -41,6 +41,31 @@ void PathsPage::onCreate(HWND hwnd, int w, int h) {
         hwnd, (HMENU)IDC_BTN_ADD_PATH, hi, nullptr);
     SendMessageW(m_hBtnAdd, WM_SETFONT, (WPARAM)Utils::getFont(10), TRUE);
 
+    // Action buttons (enabled only when a row is selected)
+    m_hBtnEdit = CreateWindowW(L"BUTTON", L"\u270E Düzenle",
+        WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
+        248, 72, 100, 34,
+        hwnd, (HMENU)IDC_BTN_EDIT_PATH, hi, nullptr);
+    SendMessageW(m_hBtnEdit, WM_SETFONT, (WPARAM)Utils::getFont(9), TRUE);
+
+    m_hBtnDelete = CreateWindowW(L"BUTTON", L"\u2716 Sil",
+        WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
+        354, 72, 80, 34,
+        hwnd, (HMENU)IDC_BTN_DELETE_PATH, hi, nullptr);
+    SendMessageW(m_hBtnDelete, WM_SETFONT, (WPARAM)Utils::getFont(9), TRUE);
+
+    m_hBtnShow = CreateWindowW(L"BUTTON", L"\U0001F4C1 Klasörde Göster",
+        WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
+        440, 72, 165, 34,
+        hwnd, (HMENU)IDC_BTN_SHOW_PATH, hi, nullptr);
+    SendMessageW(m_hBtnShow, WM_SETFONT, (WPARAM)Utils::getFont(9), TRUE);
+
+    m_hBtnOpen = CreateWindowW(L"BUTTON", L"\u25B6 Dosyay\u0131 A\u00e7",
+        WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
+        611, 72, 130, 34,
+        hwnd, (HMENU)IDC_BTN_OPEN_PATH, hi, nullptr);
+    SendMessageW(m_hBtnOpen, WM_SETFONT, (WPARAM)Utils::getFont(9), TRUE);
+
     // ListView
     m_hList = CreateWindowExW(WS_EX_CLIENTEDGE, WC_LISTVIEWW, nullptr,
         WS_CHILD | WS_VISIBLE | WS_VSCROLL |
@@ -62,13 +87,28 @@ void PathsPage::onCreate(HWND hwnd, int w, int h) {
         col.iSubItem = i;
         ListView_InsertColumn(m_hList, i, &col);
     }
+
+    // Start with action buttons disabled (nothing selected)
+    updateButtonStates();
 }
 
 void PathsPage::onSize(int w, int h) {
     if (!m_hList) return;
-    SetWindowPos(m_hBtnAdd, nullptr, 16, 72, 220, 34, SWP_NOZORDER);
-    SetWindowPos(m_hList,   nullptr, 16, 120, w - 32, h - 136, SWP_NOZORDER);
+    SetWindowPos(m_hBtnAdd,    nullptr, 16,  72, 220, 34, SWP_NOZORDER);
+    SetWindowPos(m_hBtnEdit,   nullptr, 248, 72, 100, 34, SWP_NOZORDER);
+    SetWindowPos(m_hBtnDelete, nullptr, 354, 72,  80, 34, SWP_NOZORDER);
+    SetWindowPos(m_hBtnShow,   nullptr, 440, 72, 165, 34, SWP_NOZORDER);
+    SetWindowPos(m_hBtnOpen,   nullptr, 611, 72, 130, 34, SWP_NOZORDER);
+    SetWindowPos(m_hList,      nullptr, 16, 120, w - 32, h - 136, SWP_NOZORDER);
     InvalidateRect(m_hwnd, nullptr, FALSE);
+}
+
+void PathsPage::updateButtonStates() {
+    bool hasSel = m_hList && ListView_GetSelectedCount(m_hList) > 0;
+    EnableWindow(m_hBtnEdit,   hasSel ? TRUE : FALSE);
+    EnableWindow(m_hBtnDelete, hasSel ? TRUE : FALSE);
+    EnableWindow(m_hBtnShow,   hasSel ? TRUE : FALSE);
+    EnableWindow(m_hBtnOpen,   hasSel ? TRUE : FALSE);
 }
 
 void PathsPage::refreshList() {
@@ -177,13 +217,39 @@ void PathsPage::onCommand(int id, HWND /*hCtrl*/) {
     }
 }
 
-void PathsPage::onNotify(NMHDR* nm) {
-    if (nm->hwndFrom != m_hList) return;
+LRESULT PathsPage::onNotify(NMHDR* nm) {
+    // ── ListView item-change: keep action buttons in sync ─────────────────────
+    if (nm->hwndFrom == m_hList && nm->code == LVN_ITEMCHANGED) {
+        updateButtonStates();
+        return 0;
+    }
+
+    // ── ListView custom-draw: theme row colors ────────────────────────────────
+    if (nm->hwndFrom == m_hList && nm->code == NM_CUSTOMDRAW) {
+        auto* draw = reinterpret_cast<NMLVCUSTOMDRAW*>(nm);
+        const auto& C = Theme::colors();
+        switch (draw->nmcd.dwDrawStage) {
+        case CDDS_PREPAINT:
+            return CDRF_NOTIFYITEMDRAW;
+        case CDDS_ITEMPREPAINT: {
+            bool selected = (draw->nmcd.uItemState & CDIS_SELECTED) != 0;
+            draw->clrText   = C.primaryText;
+            draw->clrTextBk = selected
+                ? Utils::blendColor(C.surface, C.primaryBlue, 0.25f)
+                : ((draw->nmcd.dwItemSpec % 2 == 0) ? C.surface
+                                                     : Utils::blendColor(C.background, C.surface, 0.5f));
+            return CDRF_NEWFONT;
+        }
+        }
+        return CDRF_DODEFAULT;
+    }
+
+    if (nm->hwndFrom != m_hList) return 0;
 
     if (nm->code == NM_DBLCLK) {
         // Double-click on path text → show in explorer
         auto* info = reinterpret_cast<NMITEMACTIVATE*>(nm);
-        if (info->iItem < 0 || info->iItem >= (int)m_paths.size()) return;
+        if (info->iItem < 0 || info->iItem >= (int)m_paths.size()) return 0;
         auto& p = m_paths[info->iItem];
         Utils::showInExplorer(p.path);
         Database::get().touchPath(p.id);
@@ -204,6 +270,7 @@ void PathsPage::onNotify(NMHDR* nm) {
         DestroyMenu(hMenu);
         if (cmd) onCommand(cmd, nullptr);
     }
+    return 0;
 }
 
 void PathsPage::onPaint() {
@@ -251,7 +318,7 @@ LRESULT CALLBACK PathsPage::WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
     case WM_PAINT:   self->onPaint();                        return 0;
     case WM_ERASEBKGND: return 1;
     case WM_COMMAND: self->onCommand(LOWORD(wp), (HWND)lp); return 0;
-    case WM_NOTIFY:  self->onNotify((NMHDR*)lp);             return 0;
+    case WM_NOTIFY:  return self->onNotify((NMHDR*)lp);
     case WM_DATA_UPDATED: self->refreshList();               return 0;
     case WM_THEME_CHANGED:
         InvalidateRect(hwnd, nullptr, TRUE);

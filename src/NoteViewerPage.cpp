@@ -171,6 +171,12 @@ void NoteViewerPage::onCommand(int id) {
         Note note = m_note;
         if (dlg.show(m_hwnd, note)) {
             Database::get().updateNote(note);
+            // Re-sync media: delete all existing, then re-insert from the in-memory list
+            Database::get().deleteAllNoteMedia(note.id);
+            for (auto& med : note.media) {
+                med.noteId = note.id;
+                Database::get().addNoteMedia(med);
+            }
             loadNote(note.id);
         }
         return;

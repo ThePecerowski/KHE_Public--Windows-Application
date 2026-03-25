@@ -397,22 +397,23 @@ void MainWindow::onNavigate(int page) {
 }
 
 void MainWindow::onThemeChanged() {
-    // Repaint all windows
-    HWND all[] = {
-        m_hwnd,
+    // Repaint all child windows — do NOT include m_hwnd itself here because
+    // SendMessageW is synchronous and would recurse back into onThemeChanged()
+    // causing a stack overflow crash.
+    HWND children[] = {
         g_sidebar.hwnd(), g_topbar.hwnd(),
         AppContext::get().hDashboard,
         AppContext::get().hPathsPage,
         AppContext::get().hNotesPage,
         AppContext::get().hNoteViewer,
     };
-    for (HWND hw : all)
+    for (HWND hw : children)
         if (hw) {
             SendMessageW(hw, WM_THEME_CHANGED, 0, 0);
             InvalidateRect(hw, nullptr, TRUE);
         }
-    // Also update child controls' background colours via WM_CTLCOLOR — they'll
-    // refresh on next paint.
+    // Redraw the main window frame and all children.
+    InvalidateRect(m_hwnd, nullptr, TRUE);
     RedrawWindow(m_hwnd, nullptr, nullptr,
                  RDW_ERASE | RDW_INVALIDATE | RDW_ALLCHILDREN | RDW_UPDATENOW);
 }

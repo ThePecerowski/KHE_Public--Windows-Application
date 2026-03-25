@@ -179,10 +179,21 @@ void NotesPage::openEditor(int noteId) {
     Note note{};
     if (noteId > 0) note = Database::get().getNoteById(noteId);
     if (dlg.show(m_hwnd, note)) {
-        if (note.id > 0)
+        if (note.id > 0) {
             Database::get().updateNote(note);
-        else
-            Database::get().addNote(note);
+            // Re-sync media: delete all existing, then re-insert from the in-memory list
+            Database::get().deleteAllNoteMedia(note.id);
+            for (auto& med : note.media) {
+                med.noteId = note.id;
+                Database::get().addNoteMedia(med);
+            }
+        } else {
+            Database::get().addNote(note);   // sets note.id
+            for (auto& med : note.media) {
+                med.noteId = note.id;
+                Database::get().addNoteMedia(med);
+            }
+        }
         refreshData();
     }
 }

@@ -14,16 +14,21 @@ private:
     void onSize(int w, int h);
     void onPaint();
     void onCommand(int id, HWND hCtrl);
-    void onNotify(NMHDR* nm);
+    LRESULT onNotify(NMHDR* nm);
     void refreshList();
 
     // Open the AddPathDialog for add or edit
     void openAddDialog(int editId = 0);
     void deleteSelected();
+    void updateButtonStates();   // enable/disable action buttons per selection
 
-    HWND m_hwnd      = nullptr;
-    HWND m_hList     = nullptr;   // SysListView32
-    HWND m_hBtnAdd   = nullptr;
+    HWND m_hwnd       = nullptr;
+    HWND m_hList      = nullptr;   // SysListView32
+    HWND m_hBtnAdd    = nullptr;
+    HWND m_hBtnEdit   = nullptr;
+    HWND m_hBtnDelete = nullptr;
+    HWND m_hBtnShow   = nullptr;
+    HWND m_hBtnOpen   = nullptr;
 
     std::vector<PathEntry> m_paths;   // local cache
 };
