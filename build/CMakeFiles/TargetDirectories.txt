@@ -1,0 +1,4 @@
+C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/CMakeFiles/sqlite3.dir
+C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/CMakeFiles/KHE.dir
+C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/CMakeFiles/ZERO_CHECK.dir

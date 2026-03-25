@@ -1,0 +1,10 @@
+^C:\USERS\ASUS\ONEDRIVE\MASAÜSTÜ\UYGULAMA_PROJEM\KHE_PUBLIC\BUILD\_DEPS\SQLITE3_SRC-SUBBUILD\CMAKEFILES\D34A9184F87C134BD52EB16FC922B0EF\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild -BC:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
