@@ -1,4 +1,5 @@
 #include "Dashboard.h"
+#include <algorithm>
 #include "AppContext.h"
 #include "Theme.h"
 #include "Controls.h"
@@ -42,35 +43,44 @@ void Dashboard::onCreate(HWND hwnd, int w, int h) {
     SendMessageW(m_hAddNote, WM_SETFONT, (WPARAM)Utils::getFont(10), TRUE);
 
     // ── Recent paths list ────────────────────────────────────────────────────
-    int listY = 180;
-    int listH = (h - listY - 20) / 2;
-    m_hPathsList = CreateWindowW(L"LISTBOX", nullptr,
-        WS_CHILD | WS_VISIBLE | WS_VSCROLL | WS_BORDER | LBS_NOTIFY,
-        16, listY, w - 32, listH,
-        hwnd, (HMENU)IDC_RECENT_PATHS_LIST, hi, nullptr);
-    SendMessageW(m_hPathsList, WM_SETFONT, (WPARAM)Utils::getFont(10), TRUE);
+    // Dynamic layout: two equal-height lists, quick-action buttons at the bottom
+    int listH       = std::max(80, (int)(h - 200) / 2);
+    int notesListY  = 72;
+    int pathsListY  = notesListY + listH + 30;
+    int quickBtnY   = pathsListY + listH + 28;
 
-    // ── Recent notes list ────────────────────────────────────────────────────
-    int notesY = listY + listH + 48;
+    // Move quick-action buttons to computed bottom position
+    SetWindowPos(m_hAddPath, nullptr, 16,  quickBtnY, 200, 36, SWP_NOZORDER);
+    SetWindowPos(m_hAddNote, nullptr, 232, quickBtnY, 200, 36, SWP_NOZORDER);
+
+    // Notes list (top of content area)
     m_hNotesList = CreateWindowW(L"LISTBOX", nullptr,
         WS_CHILD | WS_VISIBLE | WS_VSCROLL | WS_BORDER | LBS_NOTIFY,
-        16, notesY, w - 32, listH,
+        16, notesListY, w - 32, listH,
         hwnd, (HMENU)IDC_RECENT_NOTES_LIST, hi, nullptr);
     SendMessageW(m_hNotesList, WM_SETFONT, (WPARAM)Utils::getFont(10), TRUE);
+
+    // ── Recent notes list ────────────────────────────────────────────────────
+    // Paths list (below notes)
+    m_hPathsList = CreateWindowW(L"LISTBOX", nullptr,
+        WS_CHILD | WS_VISIBLE | WS_VSCROLL | WS_BORDER | LBS_NOTIFY,
+        16, pathsListY, w - 32, listH,
+        hwnd, (HMENU)IDC_RECENT_PATHS_LIST, hi, nullptr);
+    SendMessageW(m_hPathsList, WM_SETFONT, (WPARAM)Utils::getFont(10), TRUE);
 }
 
 void Dashboard::onSize(int w, int h) {
     if (!m_hPathsList) return;
 
-    SetWindowPos(m_hAddPath, nullptr, 16, 80, 200, 36, SWP_NOZORDER);
-    SetWindowPos(m_hAddNote, nullptr, 232, 80, 200, 36, SWP_NOZORDER);
+    int listH     = std::max(80, (int)(h - 200) / 2);
+    int notesY    = 72;
+    int pathsY    = notesY + listH + 30;
+    int quickBtnY = pathsY + listH + 28;
 
-    int listY = 180;
-    int listH = (h - listY - 20) / 2;
-    SetWindowPos(m_hPathsList, nullptr, 16, listY, w - 32, listH, SWP_NOZORDER);
-
-    int notesY = listY + listH + 48;
-    SetWindowPos(m_hNotesList, nullptr, 16, notesY, w - 32, listH, SWP_NOZORDER);
+    SetWindowPos(m_hNotesList, nullptr, 16, notesY,    w - 32, listH, SWP_NOZORDER);
+    SetWindowPos(m_hPathsList, nullptr, 16, pathsY,    w - 32, listH, SWP_NOZORDER);
+    SetWindowPos(m_hAddPath,   nullptr, 16, quickBtnY, 200, 36,       SWP_NOZORDER);
+    SetWindowPos(m_hAddNote,   nullptr, 232, quickBtnY, 200, 36,      SWP_NOZORDER);
 
     InvalidateRect(m_hwnd, nullptr, FALSE);
 }
@@ -108,27 +118,32 @@ void Dashboard::onPaint() {
     FillRectColor(mem, rc, C.background);
 
     // ── Title ─────────────────────────────────────────────────────────────────
-    RECT titleRc{16, 16, rc.right - 16, 60};
+    RECT titleRc{16, 8, rc.right - 16, 36};
     DrawText_(mem, L"Ana Sayfa", titleRc, C.primaryText, 20, true,
               DT_LEFT | DT_TOP | DT_SINGLELINE);
 
     // ── Subtitle ──────────────────────────────────────────────────────────────
-    RECT subtRc{16, 48, rc.right - 16, 76};
-    DrawText_(mem, L"Son kullanılan öğeler ve hızlı işlemler", subtRc,
-              C.secondaryText, 9, false, DT_LEFT | DT_TOP | DT_SINGLELINE);
+    RECT subtRc{16, 38, rc.right - 16, 60};
+    DrawText_(mem, L"Son kullan\u0131lan \u00f6\u011feler ve h\u0131zl\u0131 i\u015flemler", subtRc,
+              C.secondaryText, 8, false, DT_LEFT | DT_TOP | DT_SINGLELINE);
 
-    // ── Section headers ──────────────────────────────────────────────────────
-    RECT pathsHdr{16, 140, 300, 168};
-    DrawText_(mem, L"Son Kullanılan Yollar", pathsHdr, C.primaryText, 10, true,
-              DT_LEFT | DT_TOP | DT_SINGLELINE);
+    // Dynamic layout metrics (mirrors onCreate/onSize)
+    int listHP      = std::max(80, (int)(rc.bottom - 200) / 2);
+    int notesListYP = 72;
+    int pathsListYP = notesListYP + listHP + 30;
+    int quickBtnYP  = pathsListYP + listHP + 28;
 
-    // Recent notes header — position dynamically
-    RECT clientRc; GetClientRect(m_hwnd, &clientRc);
-    int listH = (clientRc.bottom - 180 - 20) / 2;
-    int notesHdrY = 180 + listH + 16;
-    RECT notesHdr{16, notesHdrY, 300, notesHdrY + 28};
-    DrawText_(mem, L"Son Kullanılan Notlar", notesHdr, C.primaryText, 10, true,
-              DT_LEFT | DT_TOP | DT_SINGLELINE);
+    // Section labels with accent separator lines
+    auto sectionHdr = [&](const wchar_t* lbl, int listTop, COLORREF accent) {
+        RECT hdr{16, listTop - 20, 400, listTop - 2};
+        DrawText_(mem, lbl, hdr, C.secondaryText, 8, true,
+                  DT_LEFT | DT_BOTTOM | DT_SINGLELINE);
+        RECT sep{16, listTop - 3, rc.right - 16, listTop - 2};
+        FillRectColor(mem, sep, Utils::blendColor(C.border, accent, 0.4f));
+    };
+    sectionHdr(L"\u2710  Son Kullan\u0131lan Notlar",  notesListYP, C.primaryBlue);
+    sectionHdr(L"\u2605  Son Kullan\u0131lan Yollar",  pathsListYP, C.primaryBlue);
+    sectionHdr(L"\u26A1  H\u0131zl\u0131 \u0130\u015flemler", quickBtnYP,  C.purple);
 
     BitBlt(hdc, 0, 0, rc.right, rc.bottom, mem, 0, 0, SRCCOPY);
     SelectObject(mem, old);

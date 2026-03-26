@@ -24,9 +24,9 @@ events:
       The output was:
       0
       .NET Framework i├ğin MSBuild s├╝r├╝m 17.14.23+b0019275e
-      Olu┼şturma ba┼şlat─▒ld─▒: 24.03.2026 12:55:55.
+      Olu┼şturma ba┼şlat─▒ld─▒: 25.03.2026 17:19:30.
       
-      1 d├╝─ş├╝m├╝nde "C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.vcxproj" projesi (varsay─▒lan hedefler).
+      1 d├╝─ş├╝m├╝nde "C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\EnYeniEv\\OtherProject\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.vcxproj" projesi (varsay─▒lan hedefler).
       PrepareForBuild:
         "Debug\\" dizini olu┼şturuluyor.
         Yap─▒land─▒r─▒lm─▒┼ş ├ğ─▒k─▒┼ş etkinle┼ştirildi. Derleyici tan─▒lamas─▒n─▒n bi├ğimlendirmesi hata hiyerar┼şisini yans─▒t─▒r. Daha fazla ayr─▒nt─▒ i├ğin bkz. https://aka.ms/cpp/structured-output.
@@ -39,7 +39,7 @@ events:
         CMakeCCompilerId.c
       Link:
         C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
-        CompilerIdC.vcxproj -> C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.exe
+        CompilerIdC.vcxproj -> C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\EnYeniEv\\OtherProject\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.exe
       PostBuildEvent:
         for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
         :VCEnd
@@ -47,13 +47,13 @@ events:
       FinalizeBuildStatus:
         "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" dosyas─▒ siliniyor.
         "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate" ├Â─şesine eri┼şiliyor.
-      "C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.vcxproj" Projesini Olu┼şturma ─░┼şlemi Tamamland─▒ (varsay─▒lan hedefler).
+      "C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\EnYeniEv\\OtherProject\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.vcxproj" Projesini Olu┼şturma ─░┼şlemi Tamamland─▒ (varsay─▒lan hedefler).
       
       Olu┼şturma ba┼şar─▒l─▒ oldu.
           0 Uyar─▒
           0 Hata
       
-      Ge├ğen S├╝re 00:00:03.33
+      Ge├ğen S├╝re 00:00:01.17
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -61,7 +61,7 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
       
       The C compiler identification is MSVC, found in:
-        C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/CMakeFiles/3.31.6-msvc6/CompilerIdC/CompilerIdC.exe
+        C:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/CMakeFiles/3.31.6-msvc6/CompilerIdC/CompilerIdC.exe
       
   -
     kind: "message-v1"
@@ -79,9 +79,9 @@ events:
       The output was:
       0
       .NET Framework i├ğin MSBuild s├╝r├╝m 17.14.23+b0019275e
-      Olu┼şturma ba┼şlat─▒ld─▒: 24.03.2026 12:55:59.
+      Olu┼şturma ba┼şlat─▒ld─▒: 25.03.2026 17:19:32.
       
-      1 d├╝─ş├╝m├╝nde "C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdCXX\\CompilerIdCXX.vcxproj" projesi (varsay─▒lan hedefler).
+      1 d├╝─ş├╝m├╝nde "C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\EnYeniEv\\OtherProject\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdCXX\\CompilerIdCXX.vcxproj" projesi (varsay─▒lan hedefler).
       PrepareForBuild:
         "Debug\\" dizini olu┼şturuluyor.
         Yap─▒land─▒r─▒lm─▒┼ş ├ğ─▒k─▒┼ş etkinle┼ştirildi. Derleyici tan─▒lamas─▒n─▒n bi├ğimlendirmesi hata hiyerar┼şisini yans─▒t─▒r. Daha fazla ayr─▒nt─▒ i├ğin bkz. https://aka.ms/cpp/structured-output.
@@ -94,7 +94,7 @@ events:
         CMakeCXXCompilerId.cpp
       Link:
         C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
-        CompilerIdCXX.vcxproj -> C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdCXX\\CompilerIdCXX.exe
+        CompilerIdCXX.vcxproj -> C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\EnYeniEv\\OtherProject\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdCXX\\CompilerIdCXX.exe
       PostBuildEvent:
         for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
         :VCEnd
@@ -102,13 +102,13 @@ events:
       FinalizeBuildStatus:
         "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" dosyas─▒ siliniyor.
         "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate" ├Â─şesine eri┼şiliyor.
-      "C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdCXX\\CompilerIdCXX.vcxproj" Projesini Olu┼şturma ─░┼şlemi Tamamland─▒ (varsay─▒lan hedefler).
+      "C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\EnYeniEv\\OtherProject\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdCXX\\CompilerIdCXX.vcxproj" Projesini Olu┼şturma ─░┼şlemi Tamamland─▒ (varsay─▒lan hedefler).
       
       Olu┼şturma ba┼şar─▒l─▒ oldu.
           0 Uyar─▒
           0 Hata
       
-      Ge├ğen S├╝re 00:00:01.06
+      Ge├ğen S├╝re 00:00:00.67
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -116,7 +116,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
       
       The CXX compiler identification is MSVC, found in:
-        C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/CMakeFiles/3.31.6-msvc6/CompilerIdCXX/CompilerIdCXX.exe
+        C:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/CMakeFiles/3.31.6-msvc6/CompilerIdCXX/CompilerIdCXX.exe
       
   -
     kind: "try_compile-v1"
@@ -127,8 +127,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/ASUS/OneDrive/Masa\u00fcst\u00fc/Uygulama_Projem/KHE_Public/build/CMakeFiles/CMakeScratch/TryCompile-tif0wz"
-      binary: "C:/Users/ASUS/OneDrive/Masa\u00fcst\u00fc/Uygulama_Projem/KHE_Public/build/CMakeFiles/CMakeScratch/TryCompile-tif0wz"
+      source: "C:/Users/ASUS/OneDrive/Masa\u00fcst\u00fc/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/CMakeFiles/CMakeScratch/TryCompile-g5v9ly"
+      binary: "C:/Users/ASUS/OneDrive/Masa\u00fcst\u00fc/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/CMakeFiles/CMakeScratch/TryCompile-g5v9ly"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -137,40 +137,40 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/CMakeFiles/CMakeScratch/TryCompile-tif0wz'
+        Change Dir: 'C:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/CMakeFiles/CMakeScratch/TryCompile-g5v9ly'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_235ae.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_2bccc.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         .NET Framework i├ğin MSBuild s├╝r├╝m 17.14.23+b0019275e
-        Olu┼şturma ba┼şlat─▒ld─▒: 24.03.2026 12:56:00.
+        Olu┼şturma ba┼şlat─▒ld─▒: 25.03.2026 17:19:33.
         
-        1 d├╝─ş├╝m├╝nde "C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tif0wz\\cmTC_235ae.vcxproj" projesi (varsay─▒lan hedefler).
+        1 d├╝─ş├╝m├╝nde "C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\EnYeniEv\\OtherProject\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g5v9ly\\cmTC_2bccc.vcxproj" projesi (varsay─▒lan hedefler).
         PrepareForBuild:
-          "cmTC_235ae.dir\\Debug\\" dizini olu┼şturuluyor.
+          "cmTC_2bccc.dir\\Debug\\" dizini olu┼şturuluyor.
           Yap─▒land─▒r─▒lm─▒┼ş ├ğ─▒k─▒┼ş etkinle┼ştirildi. Derleyici tan─▒lamas─▒n─▒n bi├ğimlendirmesi hata hiyerar┼şisini yans─▒t─▒r. Daha fazla ayr─▒nt─▒ i├ğin bkz. https://aka.ms/cpp/structured-output.
-          "C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tif0wz\\Debug\\" dizini olu┼şturuluyor.
-          "cmTC_235ae.dir\\Debug\\cmTC_235ae.tlog\\" dizini olu┼şturuluyor.
+          "C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\EnYeniEv\\OtherProject\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g5v9ly\\Debug\\" dizini olu┼şturuluyor.
+          "cmTC_2bccc.dir\\Debug\\cmTC_2bccc.tlog\\" dizini olu┼şturuluyor.
         InitializeBuildStatus:
-          "AlwaysCreate" belirtildi─şi i├ğin "cmTC_235ae.dir\\Debug\\cmTC_235ae.tlog\\unsuccessfulbuild" olu┼şturuluyor.
-          "cmTC_235ae.dir\\Debug\\cmTC_235ae.tlog\\unsuccessfulbuild" ├Â─şesine eri┼şiliyor.
+          "AlwaysCreate" belirtildi─şi i├ğin "cmTC_2bccc.dir\\Debug\\cmTC_2bccc.tlog\\unsuccessfulbuild" olu┼şturuluyor.
+          "cmTC_2bccc.dir\\Debug\\cmTC_2bccc.tlog\\unsuccessfulbuild" ├Â─şesine eri┼şiliyor.
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_235ae.dir\\Debug\\\\" /Fd"cmTC_235ae.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_2bccc.dir\\Debug\\\\" /Fd"cmTC_2bccc.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
           x64 i├ğin Microsoft (R) C/C++ ─░yile┼ştirmeli Derleyicisi S├╝r├╝m 19.40.33821
           Telif Hakk─▒ (C) Microsoft Corporation. T├╝m haklar─▒ sakl─▒d─▒r.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_235ae.dir\\Debug\\\\" /Fd"cmTC_235ae.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_2bccc.dir\\Debug\\\\" /Fd"cmTC_2bccc.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tif0wz\\Debug\\cmTC_235ae.exe" /INCREMENTAL /ILK:"cmTC_235ae.dir\\Debug\\cmTC_235ae.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/ASUS/OneDrive/Masa├╝st├╝/Uygulama_Projem/KHE_Public/build/CMakeFiles/CMakeScratch/TryCompile-tif0wz/Debug/cmTC_235ae.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/ASUS/OneDrive/Masa├╝st├╝/Uygulama_Projem/KHE_Public/build/CMakeFiles/CMakeScratch/TryCompile-tif0wz/Debug/cmTC_235ae.lib" /MACHINE:X64  /machine:x64 cmTC_235ae.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_235ae.vcxproj -> C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tif0wz\\Debug\\cmTC_235ae.exe
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\EnYeniEv\\OtherProject\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g5v9ly\\Debug\\cmTC_2bccc.exe" /INCREMENTAL /ILK:"cmTC_2bccc.dir\\Debug\\cmTC_2bccc.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/ASUS/OneDrive/Masa├╝st├╝/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/CMakeFiles/CMakeScratch/TryCompile-g5v9ly/Debug/cmTC_2bccc.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/ASUS/OneDrive/Masa├╝st├╝/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/CMakeFiles/CMakeScratch/TryCompile-g5v9ly/Debug/cmTC_2bccc.lib" /MACHINE:X64  /machine:x64 cmTC_2bccc.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_2bccc.vcxproj -> C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\EnYeniEv\\OtherProject\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g5v9ly\\Debug\\cmTC_2bccc.exe
         FinalizeBuildStatus:
-          "cmTC_235ae.dir\\Debug\\cmTC_235ae.tlog\\unsuccessfulbuild" dosyas─▒ siliniyor.
-          "cmTC_235ae.dir\\Debug\\cmTC_235ae.tlog\\cmTC_235ae.lastbuildstate" ├Â─şesine eri┼şiliyor.
-        "C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tif0wz\\cmTC_235ae.vcxproj" Projesini Olu┼şturma ─░┼şlemi Tamamland─▒ (varsay─▒lan hedefler).
+          "cmTC_2bccc.dir\\Debug\\cmTC_2bccc.tlog\\unsuccessfulbuild" dosyas─▒ siliniyor.
+          "cmTC_2bccc.dir\\Debug\\cmTC_2bccc.tlog\\cmTC_2bccc.lastbuildstate" ├Â─şesine eri┼şiliyor.
+        "C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\EnYeniEv\\OtherProject\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g5v9ly\\cmTC_2bccc.vcxproj" Projesini Olu┼şturma ─░┼şlemi Tamamland─▒ (varsay─▒lan hedefler).
         
         Olu┼şturma ba┼şar─▒l─▒ oldu.
             0 Uyar─▒
             0 Hata
         
-        Ge├ğen S├╝re 00:00:00.67
+        Ge├ğen S├╝re 00:00:00.65
         
       exitCode: 0
   -
@@ -210,8 +210,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/ASUS/OneDrive/Masa\u00fcst\u00fc/Uygulama_Projem/KHE_Public/build/CMakeFiles/CMakeScratch/TryCompile-nzrym9"
-      binary: "C:/Users/ASUS/OneDrive/Masa\u00fcst\u00fc/Uygulama_Projem/KHE_Public/build/CMakeFiles/CMakeScratch/TryCompile-nzrym9"
+      source: "C:/Users/ASUS/OneDrive/Masa\u00fcst\u00fc/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/CMakeFiles/CMakeScratch/TryCompile-n66y5t"
+      binary: "C:/Users/ASUS/OneDrive/Masa\u00fcst\u00fc/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/CMakeFiles/CMakeScratch/TryCompile-n66y5t"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -221,40 +221,40 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/CMakeFiles/CMakeScratch/TryCompile-nzrym9'
+        Change Dir: 'C:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/CMakeFiles/CMakeScratch/TryCompile-n66y5t'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_a4a96.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_0e154.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         .NET Framework i├ğin MSBuild s├╝r├╝m 17.14.23+b0019275e
-        Olu┼şturma ba┼şlat─▒ld─▒: 24.03.2026 12:56:01.
+        Olu┼şturma ba┼şlat─▒ld─▒: 25.03.2026 17:19:34.
         
-        1 d├╝─ş├╝m├╝nde "C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nzrym9\\cmTC_a4a96.vcxproj" projesi (varsay─▒lan hedefler).
+        1 d├╝─ş├╝m├╝nde "C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\EnYeniEv\\OtherProject\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n66y5t\\cmTC_0e154.vcxproj" projesi (varsay─▒lan hedefler).
         PrepareForBuild:
-          "cmTC_a4a96.dir\\Debug\\" dizini olu┼şturuluyor.
+          "cmTC_0e154.dir\\Debug\\" dizini olu┼şturuluyor.
           Yap─▒land─▒r─▒lm─▒┼ş ├ğ─▒k─▒┼ş etkinle┼ştirildi. Derleyici tan─▒lamas─▒n─▒n bi├ğimlendirmesi hata hiyerar┼şisini yans─▒t─▒r. Daha fazla ayr─▒nt─▒ i├ğin bkz. https://aka.ms/cpp/structured-output.
-          "C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nzrym9\\Debug\\" dizini olu┼şturuluyor.
-          "cmTC_a4a96.dir\\Debug\\cmTC_a4a96.tlog\\" dizini olu┼şturuluyor.
+          "C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\EnYeniEv\\OtherProject\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n66y5t\\Debug\\" dizini olu┼şturuluyor.
+          "cmTC_0e154.dir\\Debug\\cmTC_0e154.tlog\\" dizini olu┼şturuluyor.
         InitializeBuildStatus:
-          "AlwaysCreate" belirtildi─şi i├ğin "cmTC_a4a96.dir\\Debug\\cmTC_a4a96.tlog\\unsuccessfulbuild" olu┼şturuluyor.
-          "cmTC_a4a96.dir\\Debug\\cmTC_a4a96.tlog\\unsuccessfulbuild" ├Â─şesine eri┼şiliyor.
+          "AlwaysCreate" belirtildi─şi i├ğin "cmTC_0e154.dir\\Debug\\cmTC_0e154.tlog\\unsuccessfulbuild" olu┼şturuluyor.
+          "cmTC_0e154.dir\\Debug\\cmTC_0e154.tlog\\unsuccessfulbuild" ├Â─şesine eri┼şiliyor.
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a4a96.dir\\Debug\\\\" /Fd"cmTC_a4a96.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0e154.dir\\Debug\\\\" /Fd"cmTC_0e154.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
           x64 i├ğin Microsoft (R) C/C++ ─░yile┼ştirmeli Derleyicisi S├╝r├╝m 19.40.33821
           Telif Hakk─▒ (C) Microsoft Corporation. T├╝m haklar─▒ sakl─▒d─▒r.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a4a96.dir\\Debug\\\\" /Fd"cmTC_a4a96.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0e154.dir\\Debug\\\\" /Fd"cmTC_0e154.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nzrym9\\Debug\\cmTC_a4a96.exe" /INCREMENTAL /ILK:"cmTC_a4a96.dir\\Debug\\cmTC_a4a96.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/ASUS/OneDrive/Masa├╝st├╝/Uygulama_Projem/KHE_Public/build/CMakeFiles/CMakeScratch/TryCompile-nzrym9/Debug/cmTC_a4a96.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/ASUS/OneDrive/Masa├╝st├╝/Uygulama_Projem/KHE_Public/build/CMakeFiles/CMakeScratch/TryCompile-nzrym9/Debug/cmTC_a4a96.lib" /MACHINE:X64  /machine:x64 cmTC_a4a96.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_a4a96.vcxproj -> C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nzrym9\\Debug\\cmTC_a4a96.exe
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\EnYeniEv\\OtherProject\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n66y5t\\Debug\\cmTC_0e154.exe" /INCREMENTAL /ILK:"cmTC_0e154.dir\\Debug\\cmTC_0e154.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/ASUS/OneDrive/Masa├╝st├╝/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/CMakeFiles/CMakeScratch/TryCompile-n66y5t/Debug/cmTC_0e154.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/ASUS/OneDrive/Masa├╝st├╝/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/CMakeFiles/CMakeScratch/TryCompile-n66y5t/Debug/cmTC_0e154.lib" /MACHINE:X64  /machine:x64 cmTC_0e154.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_0e154.vcxproj -> C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\EnYeniEv\\OtherProject\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n66y5t\\Debug\\cmTC_0e154.exe
         FinalizeBuildStatus:
-          "cmTC_a4a96.dir\\Debug\\cmTC_a4a96.tlog\\unsuccessfulbuild" dosyas─▒ siliniyor.
-          "cmTC_a4a96.dir\\Debug\\cmTC_a4a96.tlog\\cmTC_a4a96.lastbuildstate" ├Â─şesine eri┼şiliyor.
-        "C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nzrym9\\cmTC_a4a96.vcxproj" Projesini Olu┼şturma ─░┼şlemi Tamamland─▒ (varsay─▒lan hedefler).
+          "cmTC_0e154.dir\\Debug\\cmTC_0e154.tlog\\unsuccessfulbuild" dosyas─▒ siliniyor.
+          "cmTC_0e154.dir\\Debug\\cmTC_0e154.tlog\\cmTC_0e154.lastbuildstate" ├Â─şesine eri┼şiliyor.
+        "C:\\Users\\ASUS\\OneDrive\\Masa├╝st├╝\\EnYeniEv\\OtherProject\\Uygulama_Projem\\KHE_Public\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n66y5t\\cmTC_0e154.vcxproj" Projesini Olu┼şturma ─░┼şlemi Tamamland─▒ (varsay─▒lan hedefler).
         
         Olu┼şturma ba┼şar─▒l─▒ oldu.
             0 Uyar─▒
             0 Hata
         
-        Ge├ğen S├╝re 00:00:00.65
+        Ge├ğen S├╝re 00:00:00.66
         
       exitCode: 0
   -

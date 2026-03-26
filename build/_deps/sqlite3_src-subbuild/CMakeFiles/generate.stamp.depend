@@ -1,8 +1,6 @@
 # CMake generation dependency list for this directory.
-C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake
 C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeGenericSystem.cmake
 C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeInitializeConfigs.cmake
-C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeSystem.cmake.in
 C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeSystemSpecificInformation.cmake
 C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeSystemSpecificInitialize.cmake
 C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/ExternalProject.cmake
@@ -17,6 +15,6 @@ C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Commo
 C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Platform/Windows-Initialize.cmake
 C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Platform/Windows.cmake
 C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Platform/WindowsPaths.cmake
-C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/CMakeFiles/3.31.6-msvc6/CMakeSystem.cmake
-C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/CMakeLists.txt
-C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate-prefix/tmp/sqlite3_src-populate-mkdirs.cmake
+C:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/CMakeFiles/3.31.6-msvc6/CMakeSystem.cmake
+C:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/CMakeLists.txt
+C:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate-prefix/tmp/sqlite3_src-populate-mkdirs.cmake

@@ -1,54 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\Uygulama_Projem\KHE_Public\src\main.cpp">
+    <ClCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\Uygulama_Projem\KHE_Public\src\Theme.cpp">
+    <ClCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\src\Theme.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\Uygulama_Projem\KHE_Public\src\Database.cpp">
+    <ClCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\src\Database.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\Uygulama_Projem\KHE_Public\src\Utils.cpp">
+    <ClCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\src\Utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\Uygulama_Projem\KHE_Public\src\Controls.cpp">
+    <ClCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\src\Controls.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\Uygulama_Projem\KHE_Public\src\MainWindow.cpp">
+    <ClCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\src\MainWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\Uygulama_Projem\KHE_Public\src\Dashboard.cpp">
+    <ClCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\src\Dashboard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\Uygulama_Projem\KHE_Public\src\PathsPage.cpp">
+    <ClCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\src\PathsPage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\Uygulama_Projem\KHE_Public\src\NotesPage.cpp">
+    <ClCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\src\NotesPage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\Uygulama_Projem\KHE_Public\src\NoteViewerPage.cpp">
+    <ClCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\src\NoteViewerPage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\Uygulama_Projem\KHE_Public\src\AddPathDialog.cpp">
+    <ClCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\src\AddPathDialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\Uygulama_Projem\KHE_Public\src\NoteEditorDialog.cpp">
+    <ClCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\src\NoteEditorDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\src\SettingsPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\src\QuickLaunch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\ASUS\OneDrive\Masaüstü\Uygulama_Projem\KHE_Public\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\Uygulama_Projem\KHE_Public\src\resources.rc">
+    <ResourceCompile Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\src\resources.rc">
       <Filter>Source Files</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{09CD54FB-D682-3775-A15B-B6BBD308282C}</UniqueIdentifier>
+      <UniqueIdentifier>{E3261A68-B312-33BC-9E5F-8EF07C7EEBF7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

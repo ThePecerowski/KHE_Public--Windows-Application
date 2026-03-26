@@ -1,5 +1,7 @@
 #pragma once
 #include <windows.h>
+#include <vector>
+#include "Models.h"
 
 // ── Global application state ─────────────────────────────────────────────────
 class AppContext {
@@ -13,11 +15,16 @@ public:
     HWND hPathsPage    = nullptr;
     HWND hNotesPage    = nullptr;
     HWND hNoteViewer   = nullptr;
+    HWND hSettingsPage = nullptr;  // Settings / shortcut config page
+    HWND hQuickLaunch  = nullptr;  // Floating quick-launch panel
 
     int  currentPage   = 0;    // PAGE_* constants
     int  viewingNoteId = -1;   // Note being viewed/edited
 
     HINSTANCE hInstance = nullptr;
+
+    // Loaded shortcut configs (refreshed from DB on startup and after save)
+    std::vector<ShortcutConfig> shortcuts;
 
     // Navigate to a page (sends WM_NAVIGATE to mainWindow)
     void navigateTo(int page);

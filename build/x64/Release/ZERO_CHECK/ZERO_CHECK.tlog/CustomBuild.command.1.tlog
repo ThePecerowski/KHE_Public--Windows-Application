@@ -1,6 +1,6 @@
-^C:\USERS\ASUS\ONEDRIVE\MASAÜSTÜ\UYGULAMA_PROJEM\KHE_PUBLIC\BUILD\CMAKEFILES\E498BA2BD6DB28F8D410CECC98A6B382\GENERATE.STAMP.RULE
+^C:\USERS\ASUS\ONEDRIVE\MASAÜSTÜ\ENYENIEV\OTHERPROJECT\UYGULAMA_PROJEM\KHE_PUBLIC\BUILD\CMAKEFILES\767DD02E1B7EFB024C2876A4CBE27F52\GENERATE.STAMP.RULE
 setlocal
-"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public -BC:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/KHE.sln
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public -BC:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/KHE.sln
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

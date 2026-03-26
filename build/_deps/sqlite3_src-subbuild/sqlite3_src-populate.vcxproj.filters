@@ -1,44 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\ASUS\OneDrive\Masaüstü\Uygulama_Projem\KHE_Public\build\_deps\sqlite3_src-subbuild\CMakeFiles\b5a59ad9c536af4c2e0cf9ed25bcbef2\sqlite3_src-populate-mkdir.rule">
+    <CustomBuild Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\build\_deps\sqlite3_src-subbuild\CMakeFiles\24725805250d511ea7af22b76c309181\sqlite3_src-populate-mkdir.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\ASUS\OneDrive\Masaüstü\Uygulama_Projem\KHE_Public\build\_deps\sqlite3_src-subbuild\CMakeFiles\b5a59ad9c536af4c2e0cf9ed25bcbef2\sqlite3_src-populate-download.rule">
+    <CustomBuild Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\build\_deps\sqlite3_src-subbuild\CMakeFiles\24725805250d511ea7af22b76c309181\sqlite3_src-populate-download.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\ASUS\OneDrive\Masaüstü\Uygulama_Projem\KHE_Public\build\_deps\sqlite3_src-subbuild\CMakeFiles\b5a59ad9c536af4c2e0cf9ed25bcbef2\sqlite3_src-populate-update.rule">
+    <CustomBuild Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\build\_deps\sqlite3_src-subbuild\CMakeFiles\24725805250d511ea7af22b76c309181\sqlite3_src-populate-update.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\ASUS\OneDrive\Masaüstü\Uygulama_Projem\KHE_Public\build\_deps\sqlite3_src-subbuild\CMakeFiles\b5a59ad9c536af4c2e0cf9ed25bcbef2\sqlite3_src-populate-patch.rule">
+    <CustomBuild Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\build\_deps\sqlite3_src-subbuild\CMakeFiles\24725805250d511ea7af22b76c309181\sqlite3_src-populate-patch.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\ASUS\OneDrive\Masaüstü\Uygulama_Projem\KHE_Public\build\_deps\sqlite3_src-subbuild\CMakeFiles\b5a59ad9c536af4c2e0cf9ed25bcbef2\sqlite3_src-populate-configure.rule">
+    <CustomBuild Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\build\_deps\sqlite3_src-subbuild\CMakeFiles\24725805250d511ea7af22b76c309181\sqlite3_src-populate-configure.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\ASUS\OneDrive\Masaüstü\Uygulama_Projem\KHE_Public\build\_deps\sqlite3_src-subbuild\CMakeFiles\b5a59ad9c536af4c2e0cf9ed25bcbef2\sqlite3_src-populate-build.rule">
+    <CustomBuild Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\build\_deps\sqlite3_src-subbuild\CMakeFiles\24725805250d511ea7af22b76c309181\sqlite3_src-populate-build.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\ASUS\OneDrive\Masaüstü\Uygulama_Projem\KHE_Public\build\_deps\sqlite3_src-subbuild\CMakeFiles\b5a59ad9c536af4c2e0cf9ed25bcbef2\sqlite3_src-populate-install.rule">
+    <CustomBuild Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\build\_deps\sqlite3_src-subbuild\CMakeFiles\24725805250d511ea7af22b76c309181\sqlite3_src-populate-install.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\ASUS\OneDrive\Masaüstü\Uygulama_Projem\KHE_Public\build\_deps\sqlite3_src-subbuild\CMakeFiles\b5a59ad9c536af4c2e0cf9ed25bcbef2\sqlite3_src-populate-test.rule">
+    <CustomBuild Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\build\_deps\sqlite3_src-subbuild\CMakeFiles\24725805250d511ea7af22b76c309181\sqlite3_src-populate-test.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\ASUS\OneDrive\Masaüstü\Uygulama_Projem\KHE_Public\build\_deps\sqlite3_src-subbuild\CMakeFiles\2f5280393cf53a0c05b994bae2e00b48\sqlite3_src-populate-complete.rule">
+    <CustomBuild Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\build\_deps\sqlite3_src-subbuild\CMakeFiles\48d35cac23d19c46fb006a91cf564dbb\sqlite3_src-populate-complete.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\ASUS\OneDrive\Masaüstü\Uygulama_Projem\KHE_Public\build\_deps\sqlite3_src-subbuild\CMakeFiles\d34a9184f87c134bd52eb16fc922b0ef\sqlite3_src-populate.rule">
+    <CustomBuild Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\build\_deps\sqlite3_src-subbuild\CMakeFiles\c0f6c4719e7b27c31ff6068b198fe7fc\sqlite3_src-populate.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\ASUS\OneDrive\Masaüstü\Uygulama_Projem\KHE_Public\build\_deps\sqlite3_src-subbuild\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\build\_deps\sqlite3_src-subbuild\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\Users\ASUS\OneDrive\Masaüstü\Uygulama_Projem\KHE_Public\build\_deps\sqlite3_src-subbuild\CMakeFiles\sqlite3_src-populate" />
+    <None Include="C:\Users\ASUS\OneDrive\Masaüstü\EnYeniEv\OtherProject\Uygulama_Projem\KHE_Public\build\_deps\sqlite3_src-subbuild\CMakeFiles\sqlite3_src-populate" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{8C226A3F-1896-3463-A720-9C22158E8FA0}</UniqueIdentifier>
+      <UniqueIdentifier>{81A0E50F-8338-3E92-820B-2AFE4ED80B2F}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

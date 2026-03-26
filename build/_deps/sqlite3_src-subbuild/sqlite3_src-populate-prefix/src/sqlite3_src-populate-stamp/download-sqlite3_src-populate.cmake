@@ -22,14 +22,14 @@ function(check_file_hash has_hash hash_is_good)
   set("${has_hash}" TRUE PARENT_SCOPE)
 
   message(VERBOSE "verifying file...
-       file='C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate-prefix/src/sqlite-amalgamation-3450100.zip'")
+       file='C:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate-prefix/src/sqlite-amalgamation-3450100.zip'")
 
-  file("" "C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate-prefix/src/sqlite-amalgamation-3450100.zip" actual_value)
+  file("" "C:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate-prefix/src/sqlite-amalgamation-3450100.zip" actual_value)
 
   if(NOT "${actual_value}" STREQUAL "")
     set("${hash_is_good}" FALSE PARENT_SCOPE)
     message(VERBOSE " hash of
-    C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate-prefix/src/sqlite-amalgamation-3450100.zip
+    C:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate-prefix/src/sqlite-amalgamation-3450100.zip
   does not match expected value
     expected: ''
       actual: '${actual_value}'")
@@ -71,32 +71,32 @@ function(sleep_before_download attempt)
   execute_process(COMMAND "${CMAKE_COMMAND}" -E sleep "${sleep_seconds}")
 endfunction()
 
-if(EXISTS "C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate-prefix/src/sqlite-amalgamation-3450100.zip")
+if(EXISTS "C:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate-prefix/src/sqlite-amalgamation-3450100.zip")
   check_file_hash(has_hash hash_is_good)
   if(has_hash)
     if(hash_is_good)
       message(VERBOSE "File already exists and hash match (skip download):
-  file='C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate-prefix/src/sqlite-amalgamation-3450100.zip'
+  file='C:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate-prefix/src/sqlite-amalgamation-3450100.zip'
   =''"
       )
       return()
     else()
       message(VERBOSE "File already exists but hash mismatch. Removing...")
-      file(REMOVE "C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate-prefix/src/sqlite-amalgamation-3450100.zip")
+      file(REMOVE "C:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate-prefix/src/sqlite-amalgamation-3450100.zip")
     endif()
   else()
     message(VERBOSE "File already exists but no hash specified (use URL_HASH):
-  file='C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate-prefix/src/sqlite-amalgamation-3450100.zip'
+  file='C:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate-prefix/src/sqlite-amalgamation-3450100.zip'
 Old file will be removed and new file downloaded from URL."
     )
-    file(REMOVE "C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate-prefix/src/sqlite-amalgamation-3450100.zip")
+    file(REMOVE "C:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate-prefix/src/sqlite-amalgamation-3450100.zip")
   endif()
 endif()
 
 set(retry_number 5)
 
 message(VERBOSE "Downloading...
-   dst='C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate-prefix/src/sqlite-amalgamation-3450100.zip'
+   dst='C:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate-prefix/src/sqlite-amalgamation-3450100.zip'
    timeout='none'
    inactivity timeout='none'"
 )
@@ -119,7 +119,7 @@ foreach(i RANGE ${retry_number})
 
       file(
         DOWNLOAD
-        "${url}" "C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate-prefix/src/sqlite-amalgamation-3450100.zip"
+        "${url}" "C:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate-prefix/src/sqlite-amalgamation-3450100.zip"
         SHOW_PROGRESS
         # no TIMEOUT
         # no INACTIVITY_TIMEOUT
@@ -136,7 +136,7 @@ foreach(i RANGE ${retry_number})
         check_file_hash(has_hash hash_is_good)
         if(has_hash AND NOT hash_is_good)
           message(VERBOSE "Hash mismatch, removing...")
-          file(REMOVE "C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate-prefix/src/sqlite-amalgamation-3450100.zip")
+          file(REMOVE "C:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate-prefix/src/sqlite-amalgamation-3450100.zip")
         else()
           message(VERBOSE "Downloading... done")
           return()

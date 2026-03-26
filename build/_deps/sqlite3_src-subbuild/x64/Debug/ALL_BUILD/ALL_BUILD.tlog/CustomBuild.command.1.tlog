@@ -1,6 +1,6 @@
-^C:\USERS\ASUS\ONEDRIVE\MASAÜSTÜ\UYGULAMA_PROJEM\KHE_PUBLIC\BUILD\_DEPS\SQLITE3_SRC-SUBBUILD\CMAKELISTS.TXT
+^C:\USERS\ASUS\ONEDRIVE\MASAÜSTÜ\ENYENIEV\OTHERPROJECT\UYGULAMA_PROJEM\KHE_PUBLIC\BUILD\_DEPS\SQLITE3_SRC-SUBBUILD\CMAKELISTS.TXT
 setlocal
-"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild -BC:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild --check-stamp-file C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/CMakeFiles/generate.stamp
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild -BC:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild --check-stamp-file C:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

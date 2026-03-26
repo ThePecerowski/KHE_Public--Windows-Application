@@ -1,0 +1,76 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# KHE_Public — .gitignore
+# Project_Documantion/ klasörü kesinlikle takipte kalır (aşağıda !ile açıkça
+# izin verilmiştir). Diğer derleme/araç çıktıları yoksayılır.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── CMake build çıktıları ─────────────────────────────────────────────────────
+build/
+
+# ── Visual Studio proje dosyaları (CMake tarafından üretilir) ─────────────────
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
+*.suo
+*.user
+*.aps
+
+# ── Visual Studio geçici / önbellek dosyaları ─────────────────────────────────
+.vs/
+*.opensdf
+*.sdf
+*.ipch
+*.pdb
+*.ilk
+*.exp
+*.idb
+*.pgd
+*.pgc
+*.lastbuildstate
+*.log
+*.tlog
+*.recipe
+*.iobj
+*.ipdb
+
+# ── Derlenmiş çıktılar ────────────────────────────────────────────────────────
+*.obj
+*.o
+*.lib
+*.a
+*.dll
+*.exe
+*.pdb
+*.res
+
+# ── CMake önbelleği ───────────────────────────────────────────────────────────
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+_deps/
+install_manifest.txt
+
+# ── VS Code ───────────────────────────────────────────────────────────────────
+.vscode/
+*.code-workspace
+
+# ── Windows sistem dosyaları ──────────────────────────────────────────────────
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ── Geçici dosyalar ───────────────────────────────────────────────────────────
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# ─────────────────────────────────────────────────────────────────────────────
+# KESİNLİKLE TAKİP EDİLECEKLER
+# Project_Documantion/ ve tüm içeriği her zaman git'te kalır.
+# ─────────────────────────────────────────────────────────────────────────────
+!Project_Documantion/
+!Project_Documantion/**

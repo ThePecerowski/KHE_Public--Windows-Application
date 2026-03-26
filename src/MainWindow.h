@@ -55,6 +55,7 @@ private:
 class MainWindow {
 public:
     bool create(HINSTANCE hi, int nCmdShow);
+    HWND hwnd() const { return m_hwnd; }
 
 private:
     static LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
@@ -64,6 +65,7 @@ private:
     void onNavigate(int page);
     void onThemeChanged();
     void onDestroy();
+    void reloadShortcuts();    // re-register hotkeys from DB
 
     // Show only the page window matching |page|; hide others
     void showPage(int page);
@@ -77,4 +79,5 @@ static const wchar_t* PAGE_LABELS[] = {
     L"Dosya Yolları",
     L"Notlar",
     L"Not Görüntüle",
+    L"Ayarlar",
 };

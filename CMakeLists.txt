@@ -35,6 +35,8 @@ set(KHE_SOURCES
     src/NoteViewerPage.cpp
     src/AddPathDialog.cpp
     src/NoteEditorDialog.cpp
+    src/SettingsPage.cpp
+    src/QuickLaunch.cpp
 )
 
 set(KHE_RESOURCES

@@ -5,8 +5,8 @@ cmake_minimum_required(VERSION ${CMAKE_VERSION}) # this file comes with cmake
 
 # Make file names absolute:
 #
-get_filename_component(filename "C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate-prefix/src/sqlite-amalgamation-3450100.zip" ABSOLUTE)
-get_filename_component(directory "C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-src" ABSOLUTE)
+get_filename_component(filename "C:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-subbuild/sqlite3_src-populate-prefix/src/sqlite-amalgamation-3450100.zip" ABSOLUTE)
+get_filename_component(directory "C:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-src" ABSOLUTE)
 
 message(VERBOSE "extracting...
      src='${filename}'

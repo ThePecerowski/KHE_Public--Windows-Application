@@ -20,8 +20,8 @@ project(sqlite3_src-populate NONE)
 include(ExternalProject)
 ExternalProject_Add(sqlite3_src-populate
                      "UPDATE_DISCONNECTED" "False" "DOWNLOAD_EXTRACT_TIMESTAMP" "TRUE" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "URL" "https://www.sqlite.org/2024/sqlite-amalgamation-3450100.zip"
-                    SOURCE_DIR          "C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-src"
-                    BINARY_DIR          "C:/Users/ASUS/OneDrive/Masaüstü/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-build"
+                    SOURCE_DIR          "C:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-src"
+                    BINARY_DIR          "C:/Users/ASUS/OneDrive/Masaüstü/EnYeniEv/OtherProject/Uygulama_Projem/KHE_Public/build/_deps/sqlite3_src-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""
                     INSTALL_COMMAND     ""

@@ -4,6 +4,7 @@
 #include "Database.h"
 #include "Utils.h"
 #include "AppContext.h"
+#include "resource.h"
 
 #pragma comment(lib, "comctl32.lib")
 #pragma comment(lib, "comdlg32.lib")
@@ -39,12 +40,26 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, LPWSTR, int nCmdShow) {
         return 1;
     }
 
+    // Build accelerator table for in-app keyboard shortcuts.
+    // These are configurable via SettingsPage; defaults are Ctrl+N / Ctrl+L /
+    // Ctrl+Tab. Ctrl+F reserved for future search (currently no search bar).
+    ACCEL accels[] = {
+        { FCONTROL | FVIRTKEY, 'N',     IDM_NEW_NOTE_ACCEL  },
+        { FCONTROL | FVIRTKEY, 'L',     IDM_NEW_PATH_ACCEL  },
+        { FCONTROL | FVIRTKEY, VK_TAB,  IDM_TAB_NEXT_ACCEL  },
+    };
+    HACCEL hAccel = CreateAcceleratorTable(accels, ARRAYSIZE(accels));
+
     MSG msg{};
     while (GetMessageW(&msg, nullptr, 0, 0) > 0) {
-        TranslateMessage(&msg);
-        DispatchMessageW(&msg);
+        // Try in-app accelerators first (Ctrl+N, Ctrl+L, Ctrl+Tab)
+        if (!TranslateAccelerator(AppContext::get().mainWindow, hAccel, &msg)) {
+            TranslateMessage(&msg);
+            DispatchMessageW(&msg);
+        }
     }
 
+    DestroyAcceleratorTable(hAccel);
     Database::get().close();
     return static_cast<int>(msg.wParam);
 }

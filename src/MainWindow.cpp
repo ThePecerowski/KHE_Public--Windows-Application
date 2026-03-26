@@ -8,8 +8,13 @@
 #include "PathsPage.h"
 #include "NotesPage.h"
 #include "NoteViewerPage.h"
+#include "SettingsPage.h"
+#include "QuickLaunch.h"
+#include "AddPathDialog.h"
+#include "Database.h"
 #include <string>
 #include <array>
+#include <shellapi.h>   // DragAcceptFiles, DragQueryFile
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Sidebar
@@ -21,7 +26,9 @@ static const NavItem NAV_ITEMS[] = {
     { L"⌂", L"Ana Sayfa",       0 },
     { L"⎗", L"Dosya Yolları",   1 },
     { L"✎", L"Notlar",          2 },
+    { L"⚙", L"Ayarlar",          4 },
 };
+static constexpr int NAV_COUNT    = 4;
 static constexpr int NAV_ITEM_H   = 48;
 static constexpr int LOGO_H       = 64;
 static constexpr int TOGGLE_H     = 52;
@@ -58,7 +65,7 @@ int Sidebar::hitTest(int y) const {
     if (y >= LOGO_H) {
         int rel = y - LOGO_H;
         int idx = rel / NAV_ITEM_H;
-        if (idx >= 0 && idx < 3) return idx;
+        if (idx >= 0 && idx < NAV_COUNT) return idx;
     }
     RECT rc;
     GetClientRect(m_hwnd, &rc);
@@ -95,10 +102,11 @@ void Sidebar::onPaint() {
         RECT itemRc{0, LOGO_H + i * NAV_ITEM_H, WIDTH, LOGO_H + (i+1) * NAV_ITEM_H};
 
         // Highlight active
-        if (i == m_activePage) {
+        // map nav item page index to activePage for comparison
+        bool isActive = (NAV_ITEMS[i].page == m_activePage);
+        if (isActive) {
             COLORREF activeBg = Utils::blendColor(C.sidebarBg, C.sidebarActive, 0.25f);
             FillRectColor(memDC, itemRc, activeBg);
-            // Left accent bar
             RECT accent{0, itemRc.top + 4, 4, itemRc.bottom - 4};
             FillRectColor(memDC, accent, C.sidebarActive);
         } else if (i == m_hoverItem) {
@@ -108,18 +116,18 @@ void Sidebar::onPaint() {
         // Icon
         RECT iconRc{12, itemRc.top, 40, itemRc.bottom};
         DrawText_(memDC, NAV_ITEMS[i].icon, iconRc,
-                  (i == m_activePage) ? C.sidebarText : C.sidebarSecText,
+                  isActive ? C.sidebarText : C.sidebarSecText,
                   12, false, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
 
         // Label
         RECT labelRc{44, itemRc.top, WIDTH - 8, itemRc.bottom};
         DrawText_(memDC, NAV_ITEMS[i].label, labelRc,
-                  (i == m_activePage) ? C.sidebarText : C.sidebarSecText,
-                  10, (i == m_activePage), DT_LEFT | DT_VCENTER | DT_SINGLELINE);
+                  isActive ? C.sidebarText : C.sidebarSecText,
+                  10, isActive, DT_LEFT | DT_VCENTER | DT_SINGLELINE);
     }
 
     // Separator
-    int sepY = LOGO_H + 3 * NAV_ITEM_H + 8;
+    int sepY = LOGO_H + NAV_COUNT * NAV_ITEM_H + 8;
     RECT sepRc{12, sepY, WIDTH - 12, sepY + 1};
     FillRectColor(memDC, sepRc, Utils::blendColor(C.sidebarBg, C.sidebarText, 0.2f));
 
@@ -167,9 +175,9 @@ void Sidebar::onMouseLeave() {
 
 void Sidebar::onLButtonDown(int /*x*/, int y) {
     int hit = hitTest(y);
-    if (hit >= 0 && hit <= 2) {
-        // Navigate
-        PostMessageW(GetParent(m_hwnd), WM_NAVIGATE, (WPARAM)hit, 0);
+    if (hit >= 0 && hit < NAV_COUNT) {
+        // Navigate using the page index stored in NAV_ITEMS
+        PostMessageW(GetParent(m_hwnd), WM_NAVIGATE, (WPARAM)NAV_ITEMS[hit].page, 0);
     } else if (hit == -1) {
         // Toggle theme
         Theme::toggle();
@@ -286,12 +294,14 @@ static const wchar_t* MW_CLASS = L"KHE_Main";
 
 // Forward-declared page constructors live in their own .cpp files.
 // We keep one of each as static objects referenced via AppContext.
-static Sidebar    g_sidebar;
-static TopBar     g_topbar;
-static Dashboard  g_dashboard;
-static PathsPage  g_pathsPage;
-static NotesPage  g_notesPage;
+static Sidebar       g_sidebar;
+static TopBar        g_topbar;
+static Dashboard     g_dashboard;
+static PathsPage     g_pathsPage;
+static NotesPage     g_notesPage;
 static NoteViewerPage g_noteViewer;
+static SettingsPage  g_settingsPage;
+static QuickLaunch   g_quickLaunch;
 
 bool MainWindow::create(HINSTANCE hi, int nCmdShow) {
     WNDCLASSEXW wc{};
@@ -353,6 +363,19 @@ void MainWindow::onCreate(HWND hwnd) {
     g_noteViewer.create(hwnd, hi, px, py, pw, ph);
     ctx.hNoteViewer = g_noteViewer.hwnd();
 
+    g_settingsPage.create(hwnd, hi, px, py, pw, ph);
+    ctx.hSettingsPage = g_settingsPage.hwnd();
+
+    // Quick Launch panel (top-level popup, no parent)
+    g_quickLaunch.create(hi);
+    ctx.hQuickLaunch = g_quickLaunch.hwnd();
+
+    // Enable drag-and-drop onto the main window
+    DragAcceptFiles(hwnd, TRUE);
+
+    // Register global hotkeys for Quick Launch: Alt+Space, Ctrl+Shift+K
+    reloadShortcuts();
+
     // Show dashboard initially
     onNavigate(PAGE_DASHBOARD);
 }
@@ -371,6 +394,7 @@ void MainWindow::onSize(int w, int h) {
         AppContext::get().hPathsPage,
         AppContext::get().hNotesPage,
         AppContext::get().hNoteViewer,
+        AppContext::get().hSettingsPage,
     };
     for (HWND p : pages)
         if (p) SetWindowPos(p, nullptr, px, py, pw, ph, SWP_NOZORDER | SWP_NOACTIVATE);
@@ -382,16 +406,23 @@ void MainWindow::showPage(int page) {
         AppContext::get().hPathsPage,
         AppContext::get().hNotesPage,
         AppContext::get().hNoteViewer,
+        AppContext::get().hSettingsPage,
     };
-    for (int i = 0; i < 4; ++i)
+    for (int i = 0; i < 5; ++i)
         if (pages[i]) ShowWindow(pages[i], (i == page) ? SW_SHOW : SW_HIDE);
 }
 
 void MainWindow::onNavigate(int page) {
     AppContext::get().currentPage = page;
     showPage(page);
-    g_sidebar.setActivePage(page < 3 ? page : 2);
-    if (page < 4) g_topbar.setPath(PAGE_LABELS[page]);
+    // Map page index back to sidebar nav-item index for highlight
+    // NAV_ITEMS pages: 0,1,2,4 → sidebar indices 0,1,2,3
+    int sidebarIdx = 0;
+    for (int i = 0; i < NAV_COUNT; ++i)
+        if (NAV_ITEMS[i].page == page) { sidebarIdx = i; break; }
+    g_sidebar.setActivePage(page);
+    if (page < (int)(sizeof(PAGE_LABELS)/sizeof(PAGE_LABELS[0])))
+        g_topbar.setPath(PAGE_LABELS[page]);
     // Notify the now-visible page to refresh data
     PostMessageW(m_hwnd, WM_DATA_UPDATED, (WPARAM)page, 0);
 }
@@ -406,6 +437,7 @@ void MainWindow::onThemeChanged() {
         AppContext::get().hPathsPage,
         AppContext::get().hNotesPage,
         AppContext::get().hNoteViewer,
+        AppContext::get().hSettingsPage,
     };
     for (HWND hw : children)
         if (hw) {
@@ -419,7 +451,31 @@ void MainWindow::onThemeChanged() {
 }
 
 void MainWindow::onDestroy() {
+    // Un-register all system hotkeys
+    UnregisterHotKey(m_hwnd, HOTKEY_QUICK_LAUNCH_1);
+    UnregisterHotKey(m_hwnd, HOTKEY_QUICK_LAUNCH_2);
+    DragAcceptFiles(m_hwnd, FALSE);
     PostQuitMessage(0);
+}
+
+void MainWindow::reloadShortcuts() {
+    // Un-register first
+    UnregisterHotKey(m_hwnd, HOTKEY_QUICK_LAUNCH_1);
+    UnregisterHotKey(m_hwnd, HOTKEY_QUICK_LAUNCH_2);
+
+    // Load current shortcuts from DB
+    AppContext::get().shortcuts = Database::get().getAllShortcuts();
+
+    // Find quick_launch action and register hotkey
+    for (auto& cfg : AppContext::get().shortcuts) {
+        if (cfg.actionId == L"quick_launch" && cfg.vkCode != 0) {
+            RegisterHotKey(m_hwnd, HOTKEY_QUICK_LAUNCH_1,
+                           cfg.modifiers | MOD_NOREPEAT, cfg.vkCode);
+        }
+    }
+    // Always also register Ctrl+Shift+K as secondary quick-launch
+    RegisterHotKey(m_hwnd, HOTKEY_QUICK_LAUNCH_2,
+                   MOD_CONTROL | MOD_SHIFT | MOD_NOREPEAT, 'K');
 }
 
 LRESULT CALLBACK MainWindow::WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
@@ -458,8 +514,9 @@ LRESULT CALLBACK MainWindow::WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) 
             AppContext::get().hPathsPage,
             AppContext::get().hNotesPage,
             AppContext::get().hNoteViewer,
+            AppContext::get().hSettingsPage,
         };
-        if (page < 4 && pages[page])
+        if (page < 5 && pages[page])
             SendMessageW(pages[page], WM_DATA_UPDATED, wp, lp);
         return 0;
     }
@@ -472,12 +529,69 @@ LRESULT CALLBACK MainWindow::WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) 
         return 1;
     }
 
-    case WM_COMMAND:
-        if (LOWORD(wp) == IDM_FILE_EXIT)   DestroyWindow(hwnd);
-        if (LOWORD(wp) == IDM_HELP_ABOUT)
+    case WM_COMMAND: {
+        int cmd = LOWORD(wp);
+        if (cmd == IDM_FILE_EXIT) DestroyWindow(hwnd);
+        if (cmd == IDM_HELP_ABOUT)
             MessageBoxW(hwnd,
-                L"KHE — Kişisel Hızlı Erişim Sistemi\nSürüm 1.0",
-                L"Hakkında", MB_ICONINFORMATION);
+                L"KHE \u2014 Ki\u015fisel H\u0131zl\u0131 Eri\u015fim Sistemi\nS\u00fcr\u00fcm 1.0",
+                L"Hakk\u0131nda", MB_ICONINFORMATION);
+        // In-app shortcut accelerator commands
+        if (cmd == IDM_NEW_NOTE_ACCEL)
+            PostMessageW(hwnd, WM_NAVIGATE, (WPARAM)PAGE_NOTES, 0);
+        if (cmd == IDM_NEW_PATH_ACCEL)
+            PostMessageW(hwnd, WM_NAVIGATE, (WPARAM)PAGE_PATHS, 0);
+        if (cmd == IDM_TAB_NEXT_ACCEL) {
+            int cur = AppContext::get().currentPage;
+            // Cycle through the 3 main tabs: 0, 1, 2
+            if (cur <= 2) cur = (cur + 1) % 3;
+            PostMessageW(hwnd, WM_NAVIGATE, (WPARAM)cur, 0);
+        }
+        return 0;
+    }
+
+    case WM_HOTKEY:
+        // Global quick-launch hotkeys (Alt+Space or Ctrl+Shift+K)
+        if (wp == HOTKEY_QUICK_LAUNCH_1 || wp == HOTKEY_QUICK_LAUNCH_2) {
+            if (g_quickLaunch.isVisible())
+                g_quickLaunch.hide();
+            else
+                g_quickLaunch.show();
+        }
+        return 0;
+
+    case WM_DROPFILES: {
+        // Drag & drop: open AddPathDialog pre-filled with dropped file path
+        HDROP hDrop = (HDROP)wp;
+        UINT  count = DragQueryFileW(hDrop, 0xFFFFFFFF, nullptr, 0);
+        if (count > 0) {
+            wchar_t path[MAX_PATH]{};
+            DragQueryFileW(hDrop, 0, path, MAX_PATH);
+            DragFinish(hDrop);
+
+            // Pre-fill a PathEntry with the dropped file
+            PathEntry entry;
+            entry.path = path;
+            // Use filename as suggested name
+            const wchar_t* slash = wcsrchr(path, L'\\');
+            entry.name = slash ? (slash + 1) : path;
+
+            // Navigate to Paths page and open dialog
+            PostMessageW(hwnd, WM_NAVIGATE, (WPARAM)PAGE_PATHS, 0);
+            AddPathDialog dlg;
+            if (dlg.show(hwnd, entry) && !entry.name.empty() && !entry.path.empty()) {
+                Database::get().addPath(entry);
+                PostMessageW(hwnd, WM_DATA_UPDATED, (WPARAM)PAGE_PATHS, 0);
+            }
+        } else {
+            DragFinish(hDrop);
+        }
+        return 0;
+    }
+
+    // WM_APP+10: sent by SettingsPage after saving shortcuts
+    case WM_APP + 10:
+        self->reloadShortcuts();
         return 0;
 
     case WM_DESTROY:

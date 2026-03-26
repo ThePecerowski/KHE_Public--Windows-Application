@@ -58,6 +58,29 @@
 #define IDC_BTN_BACK            8004
 #define IDC_BTN_EDIT_NOTE       8005
 
+// ── Settings page controls ────────────────────────────────────────────────────
+#define IDC_BTN_RECORD_KEY      9001
+#define IDC_BTN_SAVE_SHORTCUT   9002
+#define IDC_BTN_CANCEL_RECORD   9003
+#define IDC_BTN_RESET_SHORTCUTS 9004
+#define IDC_PHASE_DOWN_RADIO    9005
+#define IDC_PHASE_HOLD_RADIO    9006
+#define IDC_PHASE_TAP_RADIO     9007
+#define IDC_TAP_COUNT_EDIT      9008
+
+// ── Quick Launch controls ─────────────────────────────────────────────────────
+#define IDC_QL_SEARCH_EDIT      11001
+
+// ── In-app shortcut accelerator command IDs ───────────────────────────────────
+#define IDM_NEW_NOTE_ACCEL      10001
+#define IDM_NEW_PATH_ACCEL      10002
+#define IDM_SEARCH_ACCEL        10003
+#define IDM_TAB_NEXT_ACCEL      10004
+
+// ── Global/app hotkey IDs (used with RegisterHotKey) ─────────────────────────
+#define HOTKEY_QUICK_LAUNCH_1   1
+#define HOTKEY_QUICK_LAUNCH_2   2
+
 // ── Custom window messages ────────────────────────────────────────────────────
 #define WM_NAVIGATE             (WM_APP + 1)
 #define WM_THEME_CHANGED        (WM_APP + 2)
@@ -68,3 +91,4 @@
 #define PAGE_PATHS              1
 #define PAGE_NOTES              2
 #define PAGE_NOTE_VIEWER        3
+#define PAGE_SETTINGS           4

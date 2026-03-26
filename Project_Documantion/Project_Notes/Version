@@ -1,0 +1,23 @@
+$LastProductVersion = Alpha 0.0.1
+
+$LastVersion = Alpha 0.0.1.0
+
+LastVersion {
+
+    This version, ingradiet at Switch Theme and Notes Bugs. 
+}
+
+$CurrentVersion = Alpha 0.0.1.1
+
+CurrentVersion {
+
+Bugs is Fixed in this version. Now Made documantion and Version Controller. 
+
+Before Update = Alpha 0.1 added the version. Add Most Apperance, Add Shortcuts, Add Setting Page
+    
+}
+
+
+
+$CurrentDestVersion = Alpha 1.0
+

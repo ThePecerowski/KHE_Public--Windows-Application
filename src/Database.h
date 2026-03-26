@@ -34,6 +34,11 @@ public:
     bool                      deleteAllNoteMedia(int noteId);
     std::vector<NoteMedia>    getNoteMedia(int noteId);
 
+    // ── Shortcuts ─────────────────────────────────────────────────────────────
+    std::vector<ShortcutConfig> getAllShortcuts();
+    bool                        saveShortcut(ShortcutConfig& cfg);   // insert or update
+    bool                        resetShortcutsToDefault();           // delete all and re-seed
+
     ~Database();
 
 private:
